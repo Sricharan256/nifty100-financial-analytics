@@ -111,7 +111,7 @@ SQLite Database
 * Converts ticker values to uppercase.
 
 ---
-## Schema Validator — 16 DQ Rules
+## Day 3 - Schema Validator — 16 DQ Rules
 
 ## Schema Validator
 
