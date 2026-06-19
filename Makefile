@@ -1,62 +1,28 @@
-## ETL Overview
+# Makefile for Nifty100 Financial Analytics Project
 
-The ETL (Extract, Transform, Load) pipeline is responsible for reading financial datasets from Excel files, standardizing data formats, validating input values, and preparing the data for loading into a SQLite database. This modular design improves data quality, consistency, and maintainability.
+.PHONY: load ratios test report dashboard api clean
 
----
+load:
+	@echo "Running ETL Loader..."
+	python src/etl/loader.py
 
-## Loader Module
+ratios:
+	@echo "Calculating Financial Ratios..."
+	python src/analytics/calculate_ratios.py
 
-The `loader.py` module loads Excel datasets from the `data/raw/` directory using Pandas. It validates file availability, reads worksheets into DataFrames, handles file-related exceptions, and prepares the data for preprocessing.
+test:
+	@echo "Running Unit Tests..."
+	pytest tests/
 
-**Key Features:**
+report:
+	@echo "Generating Reports..."
+	python src/report/generate_report.py
 
-* Reads Excel files using Pandas
-* Handles missing or invalid files
-* Displays dataset row and column counts
-* Passes data to the normalisation module
+dashboard:
+	@echo "Launching Dashboard..."
 
----
+api:
+	@echo "Starting API..."
 
-## Normaliser Module
-
-The `normaliser.py` module standardizes important fields before validation and database loading.
-
-**Implemented Functions:**
-
-* `normalize_year()` – Converts financial year formats such as `FY24` and `2023-24` into the standard format `2024`.
-* `normalize_ticker()` – Removes extra spaces and converts stock ticker symbols to uppercase for consistency.
-
----
-
-## Folder Structure
-
-```text
-nifty100_financial_analytics/
-│
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── supplementary/
-│
-├── db/
-│
-├── src/
-│   ├── etl/
-│   │   ├── loader.py
-│   │   └── normaliser.py
-│   └── utils/
-│
-├── tests/
-│   └── etl/
-│       ├── test_loader.py
-│       └── test_normaliser.py
-│
-├── output/
-├── notebooks/
-├── docs/
-│
-├── README.md
-├── requirements.txt
-├── Makefile
-└── .env
-```
+clean:
+	@echo "Cleaning Project..."
