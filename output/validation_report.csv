@@ -1,0 +1,4 @@
+Rule,Status,Issue,Rows Affected
+Required Columns,Passed,All required columns present,0
+Missing Values,Passed,No missing values,0
+Duplicate Rows,Passed,No duplicate rows,0

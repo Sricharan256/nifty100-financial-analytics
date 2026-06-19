@@ -20,8 +20,7 @@ def load_excel(file_name):
 
     try:
 
-        df = pd.read_excel(file_path)
-
+        df = pd.read_excel(file_path, header=1)
         print(f"\nLoaded : {file_name}")
         print(f"Rows   : {len(df)}")
         print(f"Cols   : {len(df.columns)}")
