@@ -111,6 +111,27 @@ SQLite Database
 * Converts ticker values to uppercase.
 
 ---
+## Schema Validator
+
+The `validator.py` module validates the integrity and consistency of financial datasets before they are loaded into the SQLite database. It applies a series of Data Quality (DQ) rules to detect missing values, duplicate records, invalid formats, and schema inconsistencies.
+
+### Validation Features
+
+- Required column validation
+- Missing value detection
+- Duplicate record identification
+- Year format validation
+- Ticker format validation
+- Validation report generation
+
+### Validation Output
+
+The validator generates a CSV report containing validation results, including the validation rule, status, affected rows, and issue description. This report helps identify and resolve data quality issues before database loading.
+
+Output File:
+
+```text
+output/validation_report.csv
 
 ## Current Progress
 
