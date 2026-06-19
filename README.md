@@ -111,6 +111,8 @@ SQLite Database
 * Converts ticker values to uppercase.
 
 ---
+## Schema Validator — 16 DQ Rules
+
 ## Schema Validator
 
 The `validator.py` module validates the integrity and consistency of financial datasets before they are loaded into the SQLite database. It applies a series of Data Quality (DQ) rules to detect missing values, duplicate records, invalid formats, and schema inconsistencies.
