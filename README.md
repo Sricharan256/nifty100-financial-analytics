@@ -2,31 +2,76 @@
 
 ## Project Overview
 
-The Nifty 100 Financial Analytics Platform is a data engineering project focused on building a robust ETL pipeline for processing financial datasets of Nifty 100 companies. The project extracts data from multiple Excel files, standardizes and validates the data, and prepares it for storage in a SQLite database. This data foundation supports future modules such as financial analytics, dashboards, and reporting.
+The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering project that processes financial data of Nifty 100 companies. The project builds a robust ETL pipeline to extract, transform, validate, and load financial datasets into a SQLite database. The validated data serves as the foundation for financial analytics, reporting, and Power BI dashboards.
 
 ---
 
-## Sprint 1 – Data Foundation
+# Project Objectives
 
-### Day 1 – Environment Setup
+* Build a scalable ETL pipeline for financial datasets.
+* Standardize financial year and stock ticker formats.
+* Validate data using Data Quality (DQ) rules.
+* Store validated data in a SQLite database.
+* Prepare data for financial analytics and dashboard development.
+* Generate reports for data validation and auditing.
+
+---
+
+# Sprint 1 – Data Foundation
+
+## Day 1 – Environment Setup ✅
 
 * Created the project directory structure.
 * Configured the Python virtual environment.
 * Installed required Python libraries.
-* Added `.env`, `.gitignore`, `Makefile`, and `requirements.txt`.
+* Added `.env`, `.gitignore`, `requirements.txt`, and `Makefile`.
 * Initialized the Git repository.
-
-### Day 2 – Excel Loader & Normaliser
-
-* Developed the `loader.py` module to load Excel datasets using Pandas.
-* Implemented `normalize_year()` to standardize financial year formats.
-* Implemented `normalize_ticker()` to standardize stock ticker symbols.
-* Added basic unit tests for loader and normalisation functions.
-* Validated successful loading and preprocessing of sample datasets.
+* Created the initial project documentation.
 
 ---
 
-## Project Structure
+## Day 2 – Excel Loader & Normaliser ✅
+
+* Developed `loader.py` to load Excel datasets using Pandas.
+* Implemented `normalize_year()` to standardize financial year formats.
+* Implemented `normalize_ticker()` to standardize stock ticker symbols.
+* Successfully loaded sample datasets from the `data/raw` directory.
+* Added unit tests for loader and normaliser modules.
+
+---
+
+## Day 3 – Schema Validator & Data Quality Checks ✅
+
+* Developed `validator.py`.
+* Implemented Required Columns validation.
+* Implemented Missing Values validation.
+* Implemented Duplicate Rows validation.
+* Implemented Year validation.
+* Implemented Ticker validation.
+* Generated `validation_report.csv`.
+* Successfully passed all ETL unit tests.
+
+Validation Summary
+
+* ✅ Required Columns – Passed
+* ✅ Missing Values – Passed
+* ✅ Duplicate Rows – Passed
+
+---
+
+## Day 4 – SQLite Database Schema ✅
+
+* Created `schema.sql`.
+* Created SQLite database (`nifty100.db`).
+* Developed `database.py`.
+* Enabled SQLite Foreign Key support.
+* Created the Companies table.
+* Verified database creation.
+* Added database unit tests.
+
+---
+
+# Project Structure
 
 ```text
 nifty100_financial_analytics/
@@ -37,9 +82,24 @@ nifty100_financial_analytics/
 │   └── supplementary/
 │
 ├── db/
+│   ├── schema.sql
+│   └── nifty100.db
+│
+├── docs/
+│
+├── notebooks/
+│
+├── output/
+│   └── validation_report.csv
 │
 ├── src/
+│   ├── db/
+│   │   ├── __init__.py
+│   │   ├── database.py
+│   │   └── check_database.py
+│   │
 │   ├── etl/
+│   │   ├── __init__.py
 │   │   ├── loader.py
 │   │   ├── normaliser.py
 │   │   └── validator.py
@@ -47,11 +107,15 @@ nifty100_financial_analytics/
 │   └── utils/
 │
 ├── tests/
+│   ├── db/
+│   │   ├── __init__.py
+│   │   └── test_database.py
+│   │
 │   └── etl/
-│
-├── notebooks/
-├── output/
-├── docs/
+│       ├── __init__.py
+│       ├── test_loader.py
+│       ├── test_normaliser.py
+│       └── test_validator.py
 │
 ├── README.md
 ├── requirements.txt
@@ -62,9 +126,9 @@ nifty100_financial_analytics/
 
 ---
 
-## ETL Workflow
+# ETL Workflow
 
-```
+```text
 Excel Files
       │
       ▼
@@ -74,120 +138,193 @@ Loader Module
 Data Normalisation
       │
       ▼
-Data Validation
+Schema Validation
       │
       ▼
 SQLite Database
+      │
+      ▼
+Financial Analytics
+      │
+      ▼
+Power BI Dashboard
 ```
 
 ---
 
-## Technologies Used
+# Technologies Used
 
-* Python
+* Python 3.12
 * Pandas
 * NumPy
 * OpenPyXL
 * SQLite
 * Pytest
 * Git & GitHub
+* Power BI
 
 ---
 
-## Modules
+# Modules
 
-### Loader Module (`loader.py`)
+## Loader Module (`loader.py`)
 
-* Reads Excel datasets from the `data/raw` directory.
-* Loads data into Pandas DataFrames.
-* Handles missing files and loading errors.
+* Reads Excel datasets.
+* Loads Excel files into Pandas DataFrames.
+* Handles file loading errors.
 * Displays dataset statistics.
 
-### Normaliser Module (`normaliser.py`)
+---
 
-* Standardizes financial year formats.
+## Normaliser Module (`normaliser.py`)
+
+* Standardizes financial year values.
 * Standardizes stock ticker symbols.
-* Removes unwanted whitespace.
+* Removes extra whitespace.
 * Converts ticker values to uppercase.
 
 ---
-## Day 3 - Schema Validator — 16 DQ Rules
 
-## Schema Validator
+## Validator Module (`validator.py`)
 
-The `validator.py` module validates the integrity and consistency of financial datasets before they are loaded into the SQLite database. It applies a series of Data Quality (DQ) rules to detect missing values, duplicate records, invalid formats, and schema inconsistencies.
+Implements Data Quality (DQ) validation before data is loaded into SQLite.
 
-### Validation Features
+### Validation Rules
 
-- Required column validation
-- Missing value detection
-- Duplicate record identification
-- Year format validation
-- Ticker format validation
-- Validation report generation
+* Required Columns Validation
+* Missing Values Validation
+* Duplicate Rows Validation
+* Year Validation
+* Ticker Validation
 
 ### Validation Output
 
-The validator generates a CSV report containing validation results, including the validation rule, status, affected rows, and issue description. This report helps identify and resolve data quality issues before database loading.
-
-Output File:
+The validator generates:
 
 ```text
-output/validation_report.csv
+output/
+└── validation_report.csv
+```
 
-## Current Progress
+The report contains:
 
-* ✅ Project setup completed
-* ✅ Virtual environment configured
-* ✅ Excel loader implemented
-* ✅ Data normalisation implemented
-* ✅ Initial unit tests created
-* ⏳ Data Quality Validator (Day 3)
-* ⏳ SQLite Database (Day 4)
-* ⏳ Full ETL Pipeline (Day 5–7)
+* Validation Rule
+* Validation Status
+* Issue Description
+* Rows Affected
 
 ---
 
-## How to Run
+## Database Module (`database.py`)
 
-Install dependencies:
+Responsible for:
+
+* Creating SQLite database
+* Executing `schema.sql`
+* Creating database tables
+* Enabling foreign keys
+* Preparing the database for ETL loading
+
+---
+
+# Current Progress
+
+* ✅ Environment Setup Completed
+* ✅ Excel Loader Completed
+* ✅ Data Normalisation Completed
+* ✅ Schema Validator Completed
+* ✅ Validation Report Generated
+* ✅ SQLite Database Schema Completed
+* ✅ Unit Tests Passed
+* ⏳ Full Data Loading (Day 5)
+* ⏳ Data Quality Review (Day 6)
+* ⏳ Sprint Review & Documentation (Day 7)
+
+---
+
+# How to Run
+
+## Activate Virtual Environment
+
+```bash
+venv\Scripts\activate
+```
+
+---
+
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the loader:
+---
+
+## Run Loader
 
 ```bash
 python src/etl/loader.py
 ```
 
-Run the normaliser test:
+---
+
+## Run Normaliser
 
 ```bash
 python src/etl/normaliser.py
 ```
 
-Run unit tests:
+---
+
+## Run Validator
 
 ```bash
-pytest
+python src/etl/validator.py
 ```
 
 ---
 
-## Future Enhancements
+## Create Database
 
-* Implement 16 Data Quality (DQ) rules.
-* Build the SQLite database schema.
-* Automate the ETL pipeline.
-* Generate validation and load audit reports.
-* Develop financial analytics and dashboards.
+```bash
+python src/db/database.py
+```
 
 ---
 
-## Author
+## Verify Database
+
+```bash
+python src/db/check_database.py
+```
+
+---
+
+## Run All Unit Tests
+
+```bash
+python -m pytest
+```
+
+---
+
+# Deliverables Completed
+
+* Project Structure
+* Excel Loader
+* Data Normaliser
+* Schema Validator
+* Validation Report
+* SQLite Database
+* Database Schema
+* Unit Tests
+* Project Documentation
+
+---
+# Author
 
 **Sricharan Medaboina**
 
-Nifty 100 Financial Analytics Platform – Sprint 1
+**Nifty 100 Financial Analytics Platform**
+
+Sprint 1 – Data Foundation
