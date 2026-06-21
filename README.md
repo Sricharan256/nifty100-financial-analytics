@@ -19,7 +19,7 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 
 # Sprint 1 – Data Foundation
 
-## Day 1 – Environment Setup ✅
+## Day 1 – Environment Setup 
 
 * Created the project directory structure.
 * Configured the Python virtual environment.
@@ -30,7 +30,7 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 
 ---
 
-## Day 2 – Excel Loader & Normaliser ✅
+## Day 2 – Excel Loader & Normaliser 
 
 * Developed `loader.py` to load Excel datasets using Pandas.
 * Implemented `normalize_year()` to standardize financial year formats.
@@ -40,7 +40,7 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 
 ---
 
-## Day 3 – Schema Validator & Data Quality Checks ✅
+## Day 3 – Schema Validator & Data Quality Checks 
 
 * Developed `validator.py`.
 * Implemented Required Columns validation.
@@ -59,7 +59,7 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 
 ---
 
-## Day 4 – SQLite Database Schema ✅
+## Day 4 – SQLite Database Schema 
 
 * Created `schema.sql`.
 * Developed `database.py`.
@@ -71,7 +71,7 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 
 ---
 
-## Day 5 – ETL Data Loading & Database Integration ✅
+## Day 5 – ETL Data Loading & Database Integration 
 
 * Developed `insert_data.py` to load validated Excel datasets into SQLite.
 * Automated loading of all project datasets into database tables.
@@ -83,6 +83,17 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 * Completed end-to-end ETL pipeline from Excel files to SQLite database.
 
 ---
+## Day 6 – Data Quality Manual Review 
+
+- Verified all SQLite database tables.
+- Confirmed row counts for all datasets.
+- Performed manual review of five companies.
+- Verified year coverage across financial datasets.
+- Identified JIOFIN as the only company with less than five years of financial data.
+- Checked for missing values and duplicate records.
+- Verified foreign key integrity.
+- Generated a Data Quality Review report.
+- Successfully completed all unit tests.
 
 # Project Structure
 
