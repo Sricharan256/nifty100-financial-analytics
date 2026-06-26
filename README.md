@@ -83,7 +83,7 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 * Completed end-to-end ETL pipeline from Excel files to SQLite database.
 
 ---
-## Data Quality Manual Review 
+## Day 6 Data Quality Manual Review 
 
 - Verified all SQLite database tables.
 - Confirmed row counts for all datasets.
@@ -96,7 +96,7 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 - Successfully completed all unit tests.
 
 =======
-## Day 6 – Sprint Wrap-Up & Review 
+## Day 7 – Sprint Wrap-Up & Review 
 
 - Created exploratory SQL queries for data analysis.
 - Verified all SQLite database tables.
@@ -118,6 +118,15 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 - Calculated Return on Capital Employed (ROCE).
 - Generated `profitability_validation.csv`.
 - Added unit tests for all profitability ratios.
+-----
+## Day 9 – Leverage & Efficiency Ratio Engine ✅
+
+- Implemented Debt-to-Equity (D/E) Ratio.
+- Implemented Interest Coverage Ratio (ICR).
+- Implemented Asset Turnover Ratio.
+- Handled division-by-zero and missing-value edge cases.
+- Added unit tests for leverage and efficiency ratios.
+- Validated calculated ratios against financial statements.
 # Project Structure
 
 ```text

@@ -1,0 +1,4 @@
+company,total_debt,equity,profit_before_tax,interest,sales,total_assets,Debt_to_Equity,Interest_Coverage,Asset_Turnover,Status
+ABB,500,2000,1200,100,10000,8000,0.25,13.0,1.25,PASS
+INFY,0,5000,1500,50,20000,12000,0.0,31.0,1.67,PASS
+TCS,100,10000,1800,200,15000,10000,0.01,10.0,1.5,PASS
