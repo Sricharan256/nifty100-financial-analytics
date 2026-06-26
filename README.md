@@ -106,7 +106,18 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 - Reviewed Sprint 1 deliverables.
 - Updated project documentation.
 - Successfully completed Sprint 1 – Data Foundation.
+---------
+## Day 8 – Profitability Ratio Engine ✅
 
+- Created the `analytics` module.
+- Loaded Profit & Loss and Balance Sheet data from SQLite.
+- Merged financial datasets using company ID and year.
+- Calculated Net Profit Margin (NPM).
+- Calculated Operating Profit Margin (OPM).
+- Calculated Return on Equity (ROE).
+- Calculated Return on Capital Employed (ROCE).
+- Generated `profitability_validation.csv`.
+- Added unit tests for all profitability ratios.
 # Project Structure
 
 ```text
