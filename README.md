@@ -95,7 +95,7 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 - Generated a Data Quality Review report.
 - Successfully completed all unit tests.
 
-=======
+----
 ## Day 7 – Sprint Wrap-Up & Review 
 
 - Created exploratory SQL queries for data analysis.
@@ -127,9 +127,18 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 - Handled division-by-zero and missing-value edge cases.
 - Added unit tests for leverage and efficiency ratios.
 - Validated calculated ratios against financial statements.
-# Project Structure
+----
+## Day 10 – CAGR Engine ✅
 
-```text
+- Implemented Revenue CAGR.
+- Implemented PAT CAGR.
+- Implemented EPS CAGR.
+- Added reusable CAGR calculation function.
+- Added edge case handling.
+- Added unit tests.
+- Generated cagr_validation.csv.
+---
+# Project Structure
 nifty100_financial_analytics/
 │
 ├── data/
