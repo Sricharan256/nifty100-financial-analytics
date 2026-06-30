@@ -53,9 +53,9 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 
 ### Validation Summary
 
-* ✅ Required Columns – Passed
-* ✅ Missing Values – Passed
-* ✅ Duplicate Rows – Passed
+* Required Columns – Passed
+* Missing Values – Passed
+* Duplicate Rows – Passed
 
 ---
 
@@ -107,7 +107,7 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 - Updated project documentation.
 - Successfully completed Sprint 1 – Data Foundation.
 ---------
-## Day 8 – Profitability Ratio Engine ✅
+## Day 8 – Profitability Ratio Engine 
 
 - Created the `analytics` module.
 - Loaded Profit & Loss and Balance Sheet data from SQLite.
@@ -119,7 +119,7 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 - Generated `profitability_validation.csv`.
 - Added unit tests for all profitability ratios.
 -----
-## Day 9 – Leverage & Efficiency Ratio Engine ✅
+## Day 9 – Leverage & Efficiency Ratio Engine 
 
 - Implemented Debt-to-Equity (D/E) Ratio.
 - Implemented Interest Coverage Ratio (ICR).
@@ -128,7 +128,7 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 - Added unit tests for leverage and efficiency ratios.
 - Validated calculated ratios against financial statements.
 ---
-## Day 10 – CAGR Engine ✅
+## Day 10 – CAGR Engine 
 
 - Implemented Revenue CAGR.
 - Implemented PAT CAGR.
@@ -311,18 +311,18 @@ Responsible for:
 
 # Current Progress
 
-* ✅ Environment Setup Completed
-* ✅ Excel Loader Completed
-* ✅ Data Normalisation Completed
-* ✅ Schema Validator Completed
-* ✅ Validation Report Generated
-* ✅ SQLite Database Completed
-* ✅ ETL Data Loading Completed
-* ✅ Load Audit Report Generated
-* ✅ Database Verification Completed
-* ✅ Unit Tests Passed
-* ⏳ Data Quality Review (Day 6)
-* ⏳ Sprint Review & Documentation (Day 7)
+* Environment Setup Completed
+* Excel Loader Completed
+* Data Normalisation Completed
+* Schema Validator Completed
+* Validation Report Generated
+* SQLite Database Completed
+* ETL Data Loading Completed
+* Load Audit Report Generated
+* Database Verification Completed
+* Unit Tests Passed
+* Data Quality Review (Day 6)
+* Sprint Review & Documentation (Day 7)
 
 ---
 
