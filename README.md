@@ -127,7 +127,7 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 - Handled division-by-zero and missing-value edge cases.
 - Added unit tests for leverage and efficiency ratios.
 - Validated calculated ratios against financial statements.
-----
+---
 ## Day 10 – CAGR Engine ✅
 
 - Implemented Revenue CAGR.
@@ -137,8 +137,9 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 - Added edge case handling.
 - Added unit tests.
 - Generated cagr_validation.csv.
----
 # Project Structure
+
+```text
 nifty100_financial_analytics/
 │
 ├── data/
