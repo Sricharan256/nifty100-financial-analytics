@@ -139,7 +139,7 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 - Generated cagr_validation.csv.
 
 ---
-## Day 11 – Cash Flow KPIs & Capital Allocation ✅
+## Day 11 – Cash Flow KPIs & Capital Allocation 
 
 - Implemented Free Cash Flow.
 - Implemented CFO Quality Score.
@@ -148,6 +148,16 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 - Implemented Capital Allocation Pattern Classifier.
 - Generated capital_allocation.csv.
 - Added unit tests.
+---
+## Day 12 – Financial Ratios Population 
+
+- Merged Profit & Loss, Balance Sheet, and Cash Flow tables.
+- Calculated 19 financial KPI columns.
+- Populated the financial_ratios table in SQLite.
+- Generated financial_ratios_validation.csv.
+- Verified row count (1184 rows).
+
+
 # Project Structure
 
 ```text

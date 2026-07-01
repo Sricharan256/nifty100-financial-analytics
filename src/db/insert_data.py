@@ -124,7 +124,7 @@ if __name__ == "__main__":
         ("stock_prices.xlsx", "stock_prices"),
         ("analysis.xlsx", "analysis"),
         ("documents.xlsx", "documents"),
-        ("financial_ratios.xlsx", "financial_ratios"),
+        # ("financial_ratios.xlsx", "financial_ratios"),  # Removed for Day 12
         ("peer_groups.xlsx", "peer_groups"),
         ("prosandcons.xlsx", "pros_cons"),
         ("sectors.xlsx", "sectors"),
@@ -134,6 +134,7 @@ if __name__ == "__main__":
     for file_name, table_name in datasets:
         load_dataset(file_name, table_name)
 
-    save_audit_report()
+    print("\nLoad Audit Report Generated Successfully!")
+    print("Location : output/load_audit.csv")
 
     print("\nAll datasets loaded successfully.")
