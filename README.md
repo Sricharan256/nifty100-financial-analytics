@@ -157,7 +157,14 @@ The **Nifty 100 Financial Analytics Platform** is an end-to-end data engineering
 - Generated financial_ratios_validation.csv.
 - Verified row count (1184 rows).
 
+---
+## Day 13 – Ratio Validation & Edge Case Analysis 
 
+- Validated computed ROE against source data.
+- Compared calculated ROE values with source ROE values.
+- Generated `ratio_edge_cases.log`.
+- Documented formula differences for further review.
+- Verified the `financial_ratios` table contains all calculated KPI records.
 # Project Structure
 
 ```text
